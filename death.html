@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<div onmousemove="myFull()">
 	<head>
 		  <link href="http://necolas.github.io/normalize.css/3.0.2/normalize.css" rel='stylesheet'/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -187,7 +188,9 @@
 	  <title>Death</title>
 		<script src="https://cdn.rawgit.com/sindresorhus/screenfull.js/gh-pages/src/screenfull.js"></script>
 		<script type="text/javascript">
-		  screenfull.request();
+			function myFull() {
+			    screenfull.request();
+			}
 		  //window.onbeforeunload = function () {
 		  	//while(1) {
 	            	    //var xWin=window.open("./helper");
@@ -199,11 +202,12 @@
 		</script>
 	</head>
 	<body>
-		<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'/>
 		<div class="glitch" data-text="DEATH">DEATH</div>
 		<p style="color:white; text-align:center;">If you leave this page, you will be a happy camper.</p>
 		<center>
 			<img src="http://mjsstuf.x10host.com/index/Mocha_dead_fish.jpg">Secrets...</img>
 		</center>
-	</body>
+		</body>
+	</div>
 </html>
