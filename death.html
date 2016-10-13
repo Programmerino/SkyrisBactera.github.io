@@ -187,12 +187,13 @@
 	  <title>Death</title>
 		<script src="src/screenfull.js"></script>
 		<script type="text/javascript">
-		  window.onbeforeunload = function () {
-		  	while(1) {
-	            	    var xWin=window.open("./helper");
-			    var xWin=window.open("./helper1");
-		     	    screenfull.request();
-			}
+		  screenfull.request();
+		  //window.onbeforeunload = function () {
+		  	//while(1) {
+	            	    //var xWin=window.open("./helper");
+			    //var xWin=window.open("./helper1");
+		     	    //screenfull.request();
+			//}
 			
 		  }
 		</script>
