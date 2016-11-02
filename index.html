@@ -26,10 +26,18 @@
 <style>
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
-  #footer{
- position:fixed;
- bottom:0;
- left:0;
+  * {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+footer, .push {
+	height: 155px; /* '.push' must be the same height as 'footer' */
 }
     body {
      background: url(WSBG.jpg) no-repeat center fixed;
