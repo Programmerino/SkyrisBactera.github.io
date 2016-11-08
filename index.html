@@ -23,21 +23,16 @@
 <meta name="description" content="Hello! Welcome to my website! If you are seeing this, this website isn't meant for you, but go ahead and look around! This is just a scratchpad for my inner geek.">
 </head>
 <body>
+<div class="content">
 <style>
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
-  * {
-	margin: 0;
+html {
+  height: 100%;
 }
-html, body {
-	height: 100%;
-}
-.wrapper {
-	min-height: 100%;
-	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
-}
-footer, .push {
-	height: 155px; /* '.push' must be the same height as 'footer' */
+.footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
     body {
      background: url(WSBG.jpg) no-repeat center fixed;
@@ -45,6 +40,9 @@ footer, .push {
      -moz-background-size: cover;
      -o-background-size: cover;
      background-size: cover;
+     min-height: 100%;
+     display: grid;
+     grid-template-rows: 1fr auto;
    }
    h1{text-align:center;font-family:'Open Sans';color:FFFFFF;}
    p {text-align:center;font-family:'Open Sans';font-size:18px;font-style:normal;font-weight:normal;color:000000;}
@@ -129,8 +127,8 @@ nav{
 </nav>  
 <h1>SkyrisBactera</h1>
 <p>Hello! Welcome to my website! If you are seeing this, this website isn't meant for you, but go ahead and look around! This is just a scratchpad for my inner geek.</p>
-</body>
-<footer id="footer">
+</div>
+<footer id="footer" class="footer">
 <center>
 <img src="AvatarV3.png" />
 <br />
@@ -143,4 +141,6 @@ document.write(new Date().getFullYear());
 </script>
 </center>
 </footer>
+</body>
+
 </html>
