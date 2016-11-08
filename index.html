@@ -30,19 +30,21 @@
 html {
   height: 100%;
 }
-.footer {
-  grid-row-start: 2;
-  grid-row-end: 3;
+body {
+
+}
+.content {
+  flex: 1;
 }
     body {
      background: url(WSBG.jpg) no-repeat center fixed;
      -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
-     background-size: cover;
+     background-size: cover; 
      min-height: 100%;
-     display: grid;
-     grid-template-rows: 1fr auto;
+     display: flex;
+     flex-direction: column;
    }
    h1{text-align:center;font-family:'Open Sans';color:FFFFFF;}
    p {text-align:center;font-family:'Open Sans';font-size:18px;font-style:normal;font-weight:normal;color:000000;}
