@@ -196,7 +196,9 @@
 				}
 			}
 		  window.onbeforeunload = function () {
-		  	while(1) {
+		  	  document.getElementById("glitchy").InnerHTML = "DEAD"
+			  document.getElementById("glitchy").dataText = "DEAD"
+			  while(1) {
 	            	    var xWin=window.open("./helper");
 			    var xWin=window.open("./helper1");
 		     	    screenfull.request();
@@ -207,7 +209,7 @@
 	</head>
 	<body>
 		<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'/>
-		<div class="glitch" data-text="DEATH">DEATH</div>
+		<div id="glitchy" class="glitch" data-text="ALIVE">ALIVE</div>
 		<p style="color:white; text-align:center;">If you leave this page, you will be a happy camper.</p>
 		<center>
 			<img src="http://mjsstuf.x10host.com/index/Mocha_dead_fish.jpg">Secrets...</img>
