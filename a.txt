@@ -1,0 +1,1 @@
+gsettings set org.gnome.desktop.background draw-background false && gsettings set org.gnome.desktop.background picture-uri http://clipart-library.com/images/Aibrg8yBT.jpg && gsettings set org.gnome.desktop.background draw-background true
