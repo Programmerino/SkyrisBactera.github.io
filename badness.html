@@ -1,17 +1,12 @@
 <html>
 <body>
 <script>
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function demo() {
+function demo() {
   window.open("bad");
-  await sleep(2000);
 }
 
 while(true) {
-  demo();
+  setTimeout(demo,5000);
 }
 </script>
 </body>
