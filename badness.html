@@ -2,11 +2,13 @@
 <body>
 <script>
 window.open("badness.html");
-function demo() {
-  alert('spagiet');
-}  
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
 while(true) {
-  setTimeout(demo,1000);
+  sleep(1000).then(() => {
+      alert('spagiet');
+  })
 }
 </script>
 </body>
