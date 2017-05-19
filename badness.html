@@ -1,8 +1,17 @@
 <html>
 <body>
 <script>
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demo() {
+  window.open("bad");
+  await sleep(2000);
+}
+
 while(true) {
-window.open("bad.html");
+  demo();
 }
 </script>
 </body>
